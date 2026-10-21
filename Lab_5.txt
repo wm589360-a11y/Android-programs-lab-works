@@ -1,0 +1,72 @@
+Create an application that designs a layout with a text box and
+button named Submit. The user should enter the text in the
+text box. When the submit button is clicked then the text in the
+text box should be displayed in the toast.
+
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="phone"
+        android:hint="@string/enter_text_here"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/submit" />
+</LinearLayout>
+
+
+
+MainActivity.java
+
+package com.example.toastdemo;
+
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        EditText etInput = findViewById(R.id.etInput);
+
+        findViewById(R.id.btnSubmit).setOnClickListener(V -> {
+            String text;
+            text = etInput.getText().toString();
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+
+        });
+    }
+
+
+
+    }
