@@ -1,0 +1,77 @@
+Android program: A login from with usename, password and submit.
+
+
+MainActivity.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Login Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/user_login"
+        android:textColor="#1565C0"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Username Field -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:autofillHints="username"
+        android:hint="@string/enter_username"
+        android:inputType="text"
+        android:maxWidth="488dp"
+        android:padding="14dp"
+        android:singleLine="true" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:autofillHints="password"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:maxWidth="488dp"
+        android:padding="14dp"
+        android:singleLine="true" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:text="@string/login"
+        android:textSize="16sp" />
+
+    <!-- Login Message -->
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textSize="16sp" />
+
+</LinearLayout>
